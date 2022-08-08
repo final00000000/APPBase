@@ -13,5 +13,5 @@ Android 单纯的Base基础类
 | BaseVBVMActivity  |  MVVM架构框架|
 | BaseToolBarActivity |  自带Toolbar   标题：tvPageTitle  右侧文字：tvRightTitle |
 | | |
-| BaseActivity  | 同BaseActivity |
+| BaseFragment  | 同BaseActivity |
 | BaseVBVMFragment| 同BaseVBVMActivity   |
