@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
+apply from: '../publish.gradle'
 
 android {
     compileSdk 32
@@ -22,6 +23,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    // Apk 签名的那些事：https://www.jianshu.com/p/a1f8e5896aa2
+    signingConfigs {
+        config {
+            storeFile file(StoreFile)
+            storePassword StorePassword
+            keyAlias KeyAlias
+            keyPassword KeyPassword
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -47,5 +59,4 @@ dependencies {
     // 沉浸式                 //https://github.com/gyf-dev/ImmersionBar
     implementation "com.geyifeng.immersionbar:immersionbar:3.2.2"
     implementation "com.geyifeng.immersionbar:immersionbar-ktx:3.2.2"
-
 }
