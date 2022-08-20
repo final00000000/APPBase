@@ -2,6 +2,7 @@ package com.zhang.base
 
 import android.os.Bundle
 import android.widget.Toast
+import com.zhang.base.activity.BaseToolbarActivity
 import com.zhang.base.activity.BaseVBVMActivity
 import com.zhang.base.databinding.ActivityMainBinding
 import com.zhang.base.network.NetWorkState
@@ -9,7 +10,7 @@ import com.zhang.base.utils.BaseUtils
 import java.util.*
 
 class MainActivity :
-    BaseVBVMActivity<ActivityMainBinding, MainViewModel>(R.layout.activity_main) {
+    BaseToolbarActivity<ActivityMainBinding, MainViewModel>(R.layout.activity_main) {
 
     override fun initView(savedInstanceState: Bundle?) {
 

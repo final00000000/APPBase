@@ -1,13 +1,16 @@
 package com.zhang.base.activity
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 import com.zhang.base.R
+import com.zhang.base.utils.BaseUtils
 import com.zhang.base.utils.BaseUtils.getViewModel
 
 /**
@@ -43,12 +46,15 @@ abstract class BaseToolbarActivity<VB : ViewBinding, VM : ViewModel>(layoutId: I
         initData()
 
         onClick()
+
+        createObserver()
     }
 
 
     protected abstract fun initView(savedInstanceState: Bundle?)
     protected abstract fun initData()
     protected abstract fun onClick()
+    protected abstract fun createObserver()
 
     open fun onBack(v: View) {
         finishTransition()

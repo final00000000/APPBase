@@ -25,6 +25,18 @@ object BaseUtils {
     @JvmStatic
     var activityCallbacks: BaseActivityCallbacks = BaseActivityCallbacks()
 
+    fun getStatusHeight(context: Context): Int {
+        var statusHeight = -1
+        try {
+            val clazz = Class.forName("com.android.internal.R\$dimen")
+            val `object` = clazz.newInstance()
+            val height = clazz.getField("status_bar_height")[`object`].toString().toInt()
+            statusHeight = context.resources.getDimensionPixelSize(height)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return statusHeight
+    }
     /**
      * 获取 StatusBar 高度
      * @return StatusBar 高度
